@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Slider;
 
+use App\Models\Slider;
 use Illuminate\Foundation\Http\FormRequest;
 
-class DeleteSlider extends FormRequest
+class UpdateSliderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +24,6 @@ class DeleteSlider extends FormRequest
      */
     public function rules()
     {
-        return [
-            'slider_id' => 'required|exists:sliders,id'
-        ];
+        Slider::rules();
     }
 }
