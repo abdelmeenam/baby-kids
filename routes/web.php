@@ -24,6 +24,13 @@ Route::group(['prefix' => 'admin' , 'as' => 'admin.' , 'middleware' => 'auth'] ,
         Route::put('/update', [FaqController::class, 'update'])->name('update');
     });
 
+    //Activities
+    Route::group(['prefix' => 'activity'  , 'as' => 'activity.'] , function (){
+        Route::get('/' , [\App\Http\Controllers\Admin\ActivityController::class , 'index'])->name('all');
+        Route::get('/create' , [\App\Http\Controllers\Admin\ActivityController::class , 'create'])->name('create');
+        Route::post('/store' , [\App\Http\Controllers\Admin\ActivityController::class , 'store'])->name('store');
+
+    });
     //-------slider-------
     Route::group(['prefix' => 'slider' , 'as' => 'slider.' ] , function (){
         Route::get('/', [\App\Http\Controllers\Admin\AdminSliderController::class, 'index'])->name('all');

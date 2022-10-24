@@ -1,4 +1,5 @@
 @include('Admin.assets.navbar')
+
 <div class="nicdark_section nicdark_navigation fade-down">
 
     <div class="nicdark_menu_boxed">

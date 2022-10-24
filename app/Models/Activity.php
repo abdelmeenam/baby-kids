@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     use HasFactory;
+    protected $fillable =['title' ,'slug'  , 'icon'  ];
+
+    public static function rules(){
+        return [
+            'title' => 'required|min:5',
+            'slug' => 'required|min:5'  ,
+            'icon' => 'required'
+        ];
+    }
+
+    public function getIconAttribute($value){
+        return 'images/courses/'.$value;
+    }
 }
