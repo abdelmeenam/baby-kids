@@ -18,7 +18,13 @@ class Activity extends Model
         ];
     }
 
+    public static function deleteActivity(){
+        return [
+            'activity_id' => 'required|exists:activities,id'
+        ];
+    }
+
     public function getIconAttribute($value){
-        return 'images/courses/'.$value;
+        return 'images/activities/'.$value;
     }
 }

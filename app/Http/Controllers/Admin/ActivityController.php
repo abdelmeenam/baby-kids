@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Activity\CreateActivityRequest;
+use App\Http\Requests\Activity\DeleteActivityRequest;
+use App\Http\Requests\Activity\UpdateActivityRequest;
 use App\Http\Traits\ImagesTrait;
 use App\Models\Activity;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -26,10 +29,9 @@ class ActivityController extends Controller
          $title = $req->title;
          $slug = $req->slug;
          $icon = $req->icon;
+        $new_icon_name = time() . '-Activity.png';
 
-        $new_icon_name = time() . '-course.png';
-
-        $this->uploadImage( $icon  ,$new_icon_name ,'courses' ) ;
+        $this->uploadImage( $icon  ,$new_icon_name ,'activities' ) ;
 
          Activity::create([
             'title' => $title ,
@@ -37,7 +39,49 @@ class ActivityController extends Controller
              'icon' => $new_icon_name
          ]);
 
-         Alert::success('Success' , 'Course was added');
+         Alert::success('Success' , 'Activity was added');
         return redirect()->back();
     }
+
+    public function edit($activity_id){
+        $Activity = Activity::find($activity_id);
+        return view( 'Admin.activity.edit' , compact('Activity'));
+    }
+
+    public function update(UpdateActivityRequest $req){
+        //find old image
+        $activity = Activity::find($req->activity_id);
+        $oldFile =  $activity->icon ;
+
+        //set new image
+        $fileName = time() . '-Activity.png';
+        $file = $req->icon;
+
+        //upload new image
+        $this->uploadImage($file , $fileName, 'activities' ,$oldFile );
+
+        $title = $req->title;
+        $slug = $req->slug;
+        //update new image
+        $activity->update([
+            'slug' => $slug ,
+            'title' => $title ,
+            'icon' => $fileName
+        ]);
+
+        Alert::success('Success', 'Activity was updated');
+        return redirect()->back();
+    }
+    public function delete(DeleteActivityRequest $request ){
+
+       $Activity = Activity::find($request->activity_id);
+
+       unlink( public_path( $Activity->icon ) );
+       $Activity->delete();
+
+        Alert::success('Success', 'Activity was deleted');
+        return redirect()->back() ;
+
+    }
+
 }

@@ -29,6 +29,10 @@ Route::group(['prefix' => 'admin' , 'as' => 'admin.' , 'middleware' => 'auth'] ,
         Route::get('/' , [\App\Http\Controllers\Admin\ActivityController::class , 'index'])->name('all');
         Route::get('/create' , [\App\Http\Controllers\Admin\ActivityController::class , 'create'])->name('create');
         Route::post('/store' , [\App\Http\Controllers\Admin\ActivityController::class , 'store'])->name('store');
+        Route::delete('/delete', [\App\Http\Controllers\Admin\ActivityController::class, 'delete'])->name('delete');
+        Route::get('/edit/{activity_id}' , [\App\Http\Controllers\Admin\ActivityController::class , 'edit'])->name('edit');
+        Route::put('/update', [\App\Http\Controllers\Admin\ActivityController::class ,  'update'])->name('update');
+
 
     });
     //-------slider-------
