@@ -46,6 +46,10 @@ class CourseController extends Controller
      public function edit(){
 
      }
+
+     public function update(){
+
+     }
     public function delete(DeleteCourseRequest $request){
         $Course = Course::find($request->course_id);
 
