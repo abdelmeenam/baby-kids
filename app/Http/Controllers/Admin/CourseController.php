@@ -43,7 +43,9 @@ class CourseController extends Controller
         Alert::success('Success' , 'Course was added');
         return redirect()->back();
     }
+     public function edit(){
 
+     }
     public function delete(DeleteCourseRequest $request){
         $Course = Course::find($request->course_id);
 
