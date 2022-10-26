@@ -122,7 +122,7 @@
                             <a href="{{ route('admin.activity.all') }}"> activities </a>
                         </li>
                         <li>
-                            <a href=""> courses </a>
+                            <a href="{{ route('admin.course.all') }}"> courses </a>
                         </li>
 
                         <li>

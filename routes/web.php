@@ -32,9 +32,18 @@ Route::group(['prefix' => 'admin' , 'as' => 'admin.' , 'middleware' => 'auth'] ,
         Route::delete('/delete', [\App\Http\Controllers\Admin\ActivityController::class, 'delete'])->name('delete');
         Route::get('/edit/{activity_id}' , [\App\Http\Controllers\Admin\ActivityController::class , 'edit'])->name('edit');
         Route::put('/update', [\App\Http\Controllers\Admin\ActivityController::class ,  'update'])->name('update');
-
-
     });
+
+    //Courses
+    Route::group(['prefix' => 'course'  , 'as' => 'course.'] , function (){
+        Route::get('/' , [\App\Http\Controllers\Admin\CourseController::class , 'index'])->name('all');
+        Route::get('/create' , [\App\Http\Controllers\Admin\CourseController::class , 'create'])->name('create');
+        Route::post('/store' , [\App\Http\Controllers\Admin\CourseController::class , 'store'])->name('store');
+        Route::delete('/delete', [\App\Http\Controllers\Admin\CourseController::class, 'delete'])->name('delete');
+        Route::get('/edit/{course_id}' , [\App\Http\Controllers\Admin\CourseController::class , 'edit'])->name('edit');
+        Route::put('/update', [\App\Http\Controllers\Admin\CourseController::class ,  'update'])->name('update');
+    });
+
     //-------slider-------
     Route::group(['prefix' => 'slider' , 'as' => 'slider.' ] , function (){
         Route::get('/', [\App\Http\Controllers\Admin\AdminSliderController::class, 'index'])->name('all');
