@@ -7,9 +7,7 @@ use App\Http\Requests\Teacher\CreateTeacherRequest;
 use App\Http\Requests\Teacher\DeleteTeacherRequest;
 use App\Http\Requests\Teacher\UpdateTeacherRequest;
 use App\Http\Traits\ImagesTrait;
-use App\Models\Activity;
 use App\Models\Teacher;
-use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class TeacherController extends Controller
@@ -51,8 +49,33 @@ class TeacherController extends Controller
         return view( 'Admin.teacher.edit' , compact('teacher'));
     }
 
-    public function update(UpdateTeacherRequest $request ){
+    public function update(UpdateTeacherRequest $req ){
+        //find old image
 
+        $teacher = Teacher::find($req->teacher_id);
+        $oldFile =  $teacher->image ;
+
+        //set new image
+        $fileName = time() . '-Teacher.png';
+        $file = $req->image;
+
+        //upload new image
+        $this->uploadImage($file , $fileName, 'teachers' ,$oldFile );
+
+        $name = $req->name;
+        $description = $req->description;
+        $course_id = $req->course_id;
+
+        //update new image
+        $teacher->update([
+            'name' => $name ,
+            'description' => $description ,
+            'course_id' => $course_id ,
+            'image' => $fileName
+        ]);
+
+        Alert::success('Success', 'Teacher was updated');
+        return redirect()->back();
 
     }
 
