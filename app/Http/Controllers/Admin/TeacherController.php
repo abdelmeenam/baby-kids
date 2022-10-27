@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\CreateTeacherRequest;
 use App\Http\Requests\Teacher\DeleteTeacherRequest;
+use App\Http\Requests\Teacher\UpdateTeacherRequest;
 use App\Http\Traits\ImagesTrait;
 use App\Models\Activity;
 use App\Models\Teacher;
@@ -50,9 +51,10 @@ class TeacherController extends Controller
         return view( 'Admin.teacher.edit' , compact('teacher'));
     }
 
-public function update(){
+    public function update(UpdateTeacherRequest $request ){
 
-}
+
+    }
 
     public function delete(DeleteTeacherRequest $request ){
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Teacher;
 
+use App\Models\Teacher;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateTeacherRequest extends FormRequest
@@ -13,7 +14,7 @@ class UpdateTeacherRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +24,8 @@ class UpdateTeacherRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+
+        return  array_merge(Teacher::rules() , ['teacher_id' => 'required|exists:teachers,id']);
+
     }
 }
