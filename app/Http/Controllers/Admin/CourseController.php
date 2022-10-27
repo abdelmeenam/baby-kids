@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Activity\CreateActivityRequest;
+use App\Http\Requests\Activity\UpdateActivityRequest;
 use App\Http\Requests\Course\CreateCourseRequest;
 use App\Http\Requests\Course\DeleteCourseRequest;
+use App\Http\Requests\Course\UpdateCourseRequest;
 use App\Http\Traits\ImagesTrait;
 use App\Models\Activity;
 use App\Models\Course;
@@ -43,11 +45,38 @@ class CourseController extends Controller
         Alert::success('Success' , 'Course was added');
         return redirect()->back();
     }
-     public function edit(){
-
+     public function edit($course_id){
+         $course = Course::find($course_id);
+         return view( 'Admin.course.edit' , compact('course'));
      }
 
-     public function update(){
+     public function update(UpdateCourseRequest $req ){
+         //find old image
+         $course = Course::find($req->course_id);
+         $oldFile =  $course->image ;
+
+         //set new image
+         $fileName = time() . '-Activity.png';
+         $file = $req->image;
+
+         //upload new image
+         $this->uploadImage($file , $fileName, 'courses' ,$oldFile );
+
+         $name = $req->name;
+         $description = $req->description;
+         $price = $req->price;
+
+         //update new image
+         $course->update([
+             'name' => $name ,
+             'description' => $description ,
+             'price' => $price ,
+             'image' => $fileName
+         ]);
+
+         Alert::success('Success', 'Course was updated');
+         return redirect()->back();
+
 
      }
     public function delete(DeleteCourseRequest $request){

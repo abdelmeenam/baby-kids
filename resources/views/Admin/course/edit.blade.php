@@ -25,26 +25,30 @@
                         </div>
                         <div class="widget-content widget-content-area">
 
-                            <form method="post" action="{{route('admin.activity.update')}}" enctype="multipart/form-data">
+                            <form method="post" action="{{route('admin.course.update')}}" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
 
                                 <div class="input-group mb-4">
-                                    <input type="text" class="form-control" value="{{$Activity->title  }}"  name="title" placeholder="Title" >
+                                    <input type="text" class="form-control" value="{{$course->name  }}"  name="name" placeholder="name" >
                                 </div>
 
                                 <div class="input-group mb-4">
-                                    <input type="text" class="form-control"  value="{{$Activity->slug  }}" name="slug" placeholder="Slug" >
+                                    <input type="text" class="form-control" value="{{$course->description  }}"  name="description" placeholder="description" >
+                                </div>
+
+                                <div class="input-group mb-4">
+                                    <input type="text" class="form-control"  value="{{$course->price  }}" name="price" placeholder="price" >
                                 </div>
 
                                 <div class="input-group mb-4">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Image</span>
                                     </div>
-                                    <input type="file" class="form-control" name="icon" aria-label="With textarea">
+                                    <input type="file" class="form-control" name="image" aria-label="With textarea">
                                 </div>
 
-                                <input type="hidden" name="activity_id" value="{{$Activity->id}}">
+                                <input type="hidden" name="course_id" value="{{$course->id}}">
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>
 
