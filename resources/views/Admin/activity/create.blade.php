@@ -15,16 +15,16 @@
                             <div class="row">
                                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                     <h4>Create New Activity</h4>
-                                    @if($errors->any())
-                                        @foreach($errors->all() as $error)
-                                            <li style="color: red">{{$error}}</li>
-                                        @endforeach
-                                    @endif
+
                                 </div>
                             </div>
                         </div>
                         <div class="widget-content widget-content-area">
-
+                            @if($errors->any())
+                                @foreach($errors->all() as $error)
+                                    <li style="color: red">{{$error}}</li>
+                                @endforeach
+                            @endif
                             <form method="post" action="{{route('admin.activity.store')}}" enctype="multipart/form-data">
                                 @csrf
 

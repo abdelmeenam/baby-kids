@@ -20,7 +20,6 @@
                             @if($errors->any())
                                 @foreach($errors->all() as $error)
                                     <li style="color: red">{{$error}}</li>
-
                                 @endforeach
                             @endif
                             <form method="post" action="{{route('admin.teacher.update')}}" enctype="multipart/form-data">

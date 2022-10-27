@@ -7,13 +7,6 @@
         <div class="container">
 
             <div class="row layout-top-spacing">
-
-                @if($errors->any())
-                    @foreach($errors->all() as $error)
-                        <h4>{{$error}}</h4>
-                    @endforeach
-                @endif
-
                 <div id="basic" class="col-lg-12 col-sm-12 col-12 layout-spacing">
                     <div class="statbox widget box box-shadow">
                         <div class="widget-header">
@@ -24,6 +17,12 @@
                             </div>
                         </div>
                         <div class="widget-content widget-content-area">
+
+                            @if($errors->any())
+                                @foreach($errors->all() as $error)
+                                    <li style="color: red">{{$error}}</li>
+                                @endforeach
+                            @endif
 
                             <form method="post" action="{{route('admin.course.update')}}" enctype="multipart/form-data">
                                 @csrf
