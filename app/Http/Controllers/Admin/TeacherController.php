@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\CreateTeacherRequest;
 use App\Http\Requests\Teacher\DeleteTeacherRequest;
 use App\Http\Traits\ImagesTrait;
+use App\Models\Activity;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -43,6 +44,13 @@ class TeacherController extends Controller
         Alert::success('Success' , 'Teacher was added');
         return redirect()->back();
     }
+
+    public function edit($teacher_id){
+        $teacher = Teacher::find($teacher_id);
+        return view( 'Admin.teacher.edit' , compact('teacher'));
+    }
+
+
 
     public function delete(DeleteTeacherRequest $request ){
 

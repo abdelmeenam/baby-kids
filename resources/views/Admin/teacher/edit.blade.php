@@ -10,7 +10,7 @@
 
                 @if($errors->any())
                     @foreach($errors->all() as $error)
-                        <h4>{{$error}}</h4>
+                        <li class="red">{{$error}}</li>
                     @endforeach
                 @endif
 
@@ -25,21 +25,18 @@
                         </div>
                         <div class="widget-content widget-content-area">
 
-                            <form method="post" action="{{route('admin.course.update')}}" enctype="multipart/form-data">
+                            <form method="post" action="{{route('admin.teacher.update')}}" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
 
                                 <div class="input-group mb-4">
-                                    <input type="text" class="form-control" value="{{$course->name  }}"  name="name" placeholder="name" >
+                                    <input type="text" class="form-control" value="{{$teacher->name  }}"  name="name" placeholder="name" >
                                 </div>
 
                                 <div class="input-group mb-4">
-                                    <input type="text" class="form-control" value="{{$course->description  }}"  name="description" placeholder="description" >
+                                    <input type="text" class="form-control" value="{{$teacher->description  }}"  name="description" placeholder="description" >
                                 </div>
 
-                                <div class="input-group mb-4">
-                                    <input type="text" class="form-control"  value="{{$course->price  }}" name="price" placeholder="price" >
-                                </div>
 
                                 <div class="input-group mb-4">
                                     <div class="input-group-prepend">
@@ -48,7 +45,7 @@
                                     <input type="file" class="form-control" name="image" aria-label="With textarea">
                                 </div>
 
-                                <input type="hidden" name="course_id" value="{{$course->id}}">
+                                <input type="hidden" name="course_id" value="{{$teacher->id}}">
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>
 
