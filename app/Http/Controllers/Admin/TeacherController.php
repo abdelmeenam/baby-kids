@@ -50,7 +50,9 @@ class TeacherController extends Controller
         return view( 'Admin.teacher.edit' , compact('teacher'));
     }
 
+public function update(){
 
+}
 
     public function delete(DeleteTeacherRequest $request ){
 
