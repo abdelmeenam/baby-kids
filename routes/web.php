@@ -34,6 +34,16 @@ Route::group(['prefix' => 'admin' , 'as' => 'admin.' , 'middleware' => 'auth'] ,
         Route::put('/update', [\App\Http\Controllers\Admin\ActivityController::class ,  'update'])->name('update');
     });
 
+    //Teachers
+    Route::group(['prefix' => 'teacher'  , 'as' => 'teacher.'] , function (){
+        Route::get('/' , [\App\Http\Controllers\Admin\TeacherController::class , 'index'])->name('all');
+        Route::get('/create' , [\App\Http\Controllers\Admin\TeacherController::class , 'create'])->name('create');
+        Route::post('/store' , [\App\Http\Controllers\Admin\TeacherController::class , 'store'])->name('store');
+        Route::delete('/delete', [\App\Http\Controllers\Admin\TeacherController::class, 'delete'])->name('delete');
+        Route::get('/edit/{teacher_id}' , [\App\Http\Controllers\Admin\TeacherController::class , 'edit'])->name('edit');
+        Route::put('/update', [\App\Http\Controllers\Admin\TeacherController::class ,  'update'])->name('update');
+    });
+
     //Courses
     Route::group(['prefix' => 'course'  , 'as' => 'course.'] , function (){
         Route::get('/' , [\App\Http\Controllers\Admin\CourseController::class , 'index'])->name('all');

@@ -126,12 +126,13 @@
                         </li>
 
                         <li>
-                            <a href=""> contacts </a>
+                            <a href="{{ route('admin.teacher.all') }}"> Teachers </a>
                         </li>
 
                         <li>
-                            <a href=""> Teachers </a>
+                            <a href=""> contacts </a>
                         </li>
+
 
 
                     </ul>
