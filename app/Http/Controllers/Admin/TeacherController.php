@@ -13,6 +13,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class TeacherController extends Controller
 {
+    //Image Trait
     use ImagesTrait;
 
     public function index(){
