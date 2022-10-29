@@ -7,6 +7,7 @@ use App\Http\Requests\Teacher\CreateTeacherRequest;
 use App\Http\Requests\Teacher\DeleteTeacherRequest;
 use App\Http\Requests\Teacher\UpdateTeacherRequest;
 use App\Http\Traits\ImagesTrait;
+use App\Models\Course;
 use App\Models\Teacher;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -46,37 +47,39 @@ class TeacherController extends Controller
 
     public function edit($teacher_id){
         $teacher = Teacher::find($teacher_id);
+        //$coutses = Course::
         return view( 'Admin.teacher.edit' , compact('teacher'));
     }
 
     public function update(UpdateTeacherRequest $req ){
-        //find old image
 
         $teacher = Teacher::find($req->teacher_id);
         $oldFile =  $teacher->image ;
 
-        //set new image
-        $fileName = time() . '-Teacher.png';
-        $file = $req->image;
+        if ($req->has('image')){
+            //find old image
 
-        //upload new image
-        $this->uploadImage($file , $fileName, 'teachers' ,$oldFile );
+            //set new image and upload
+            $fileName = time() . '-Teacher.png';
+            $file = $req->image;
+            $this->uploadImage($file , $fileName, 'teachers' ,$oldFile );
+        }
 
         $name = $req->name;
         $description = $req->description;
         $course_id = $req->course_id;
 
-        //update new image
+       $imageName= explode('/' , $oldFile ) ;
+
         $teacher->update([
             'name' => $name ,
             'description' => $description ,
             'course_id' => $course_id ,
-            'image' => $fileName
+            'image' => (isset($fileName))? $fileName : $imageName[2]
         ]);
 
         Alert::success('Success', 'Teacher was updated');
         return redirect()->back();
-
     }
 
     public function delete(DeleteTeacherRequest $request ){

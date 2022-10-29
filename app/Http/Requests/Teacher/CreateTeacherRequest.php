@@ -25,6 +25,6 @@ class CreateTeacherRequest extends FormRequest
      */
     public function rules()
     {
-        return Teacher::rules();
+        return  array_merge(Teacher::rules() , ['image' => 'required']);
     }
 }

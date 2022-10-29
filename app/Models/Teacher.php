@@ -15,7 +15,6 @@ class Teacher extends Model
         return [
             'name' => 'required|min:5',
             'description' => 'required|min:5'  ,
-            'image' => 'required'  ,
             'course_id' => 'required|exists:courses,id'
         ];
     }
