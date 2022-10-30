@@ -1,4 +1,4 @@
-@include('Admin.assets.navbar')
+@include('assets.navbar')
 
 <div class="nicdark_section nicdark_navigation fade-down">
 
@@ -1142,4 +1142,4 @@
 </section>
 <!--end section--><!--end-->
 
-@include('Admin.assets.footer')
+@include('assets.footer')

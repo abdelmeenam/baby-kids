@@ -6,6 +6,14 @@ use App\Http\Controllers\Admin\FaqController;
 
 
 
+Route::get('/',function (){
+    return view ('index');
+} );
+
+Route::get('/teacher', [\App\Http\Controllers\User\TeacherController::class, 'teacher']);
+
+
+
 Route::get('/admin/login', [\App\Http\Controllers\Admin\AuthController::class, 'loginPage'])->name('admin.login');
 Route::post('/admin/login', [\App\Http\Controllers\Admin\AuthController::class, 'login'])->name('admin.postLogin');
 

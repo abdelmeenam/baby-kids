@@ -25,9 +25,13 @@ class Teacher extends Model
         ];
     }
 
-
-
     public function getImageAttribute($value){
         return 'images/teachers/'.$value;
     }
+
+    //Teacher has only one course
+    public function course(){
+        return $this->hasOne(Course::class ,  'course_id' , 'id');
+    }
+
 }
