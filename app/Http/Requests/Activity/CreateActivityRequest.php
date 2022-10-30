@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Activity;
 
 use App\Models\Activity;
+use App\Models\Teacher;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateActivityRequest extends FormRequest
@@ -24,6 +25,7 @@ class CreateActivityRequest extends FormRequest
      */
     public function rules()
     {
-       return Activity::rules();
+        return  array_merge(Activity::rules() , ['icon' => 'required']);
+
     }
 }

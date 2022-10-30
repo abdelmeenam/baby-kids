@@ -58,8 +58,6 @@ class TeacherController extends Controller
         $oldFile =  $teacher->image ;
 
         if ($req->has('image')){
-            //find old image
-
             //set new image and upload
             $fileName = time() . '-Teacher.png';
             $file = $req->image;

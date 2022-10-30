@@ -53,20 +53,23 @@ class ActivityController extends Controller
         $activity = Activity::find($req->activity_id);
         $oldFile =  $activity->icon ;
 
-        //set new image
-        $fileName = time() . '-Activity.png';
-        $file = $req->icon;
-
-        //upload new image
-        $this->uploadImage($file , $fileName, 'activities' ,$oldFile );
+        if ($req->has('icon')){
+            //set new image and upload
+            $fileName = time() . '-Activity.png';
+            $file = $req->icon;
+            $this->uploadImage($file , $fileName, 'activities' ,$oldFile );
+        }
 
         $title = $req->title;
         $slug = $req->slug;
+
+        $imageName= explode('/' , $oldFile ) ;
+
         //update new image
         $activity->update([
             'slug' => $slug ,
             'title' => $title ,
-            'icon' => $fileName
+            'icon' => (isset($fileName))? $fileName : $imageName[2]
         ]);
 
         Alert::success('Success', 'Activity was updated');
