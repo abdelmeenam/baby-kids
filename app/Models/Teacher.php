@@ -31,7 +31,7 @@ class Teacher extends Model
 
     //Teacher has only one course
     public function course(){
-        return $this->hasOne(Course::class ,  'course_id' , 'id');
+        return $this->belongsTo(Course::class ,  'course_id' , 'id');
     }
 
 }

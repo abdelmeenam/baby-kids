@@ -29,4 +29,8 @@ class Course extends Model
     public function getImageAttribute($value){
         return 'images/courses/'.$value;
     }
+
+    public function Teacher(){
+        return $this->hasOne(Teacher::class ,  'course_id' , 'id');
+    }
 }
