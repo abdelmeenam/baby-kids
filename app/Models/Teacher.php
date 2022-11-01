@@ -29,7 +29,7 @@ class Teacher extends Model
         return 'images/teachers/'.$value;
     }
 
-    //Teacher has only one course
+    //Teacher has only one course(Reversed)
     public function course(){
         return $this->belongsTo(Course::class ,  'course_id' , 'id');
     }

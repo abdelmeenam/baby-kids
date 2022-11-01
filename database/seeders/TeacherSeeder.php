@@ -15,11 +15,11 @@ class TeacherSeeder extends Seeder
      */
     public function run()
     {
-        Teacher::create([
-           'name'=> 'abdelmonem' ,
-           'description' => 'Programming teacher' ,
-            'image' => 'abdelmonem.png' ,
-            'course_id' => '1'
-        ]);
+//        Teacher::create([
+//           'name'=> 'ali' ,
+//           'description' => 'Programming teacher' ,
+//            'image' => 'ali.png' ,
+//            'course_id' => '1'
+//        ]);
     }
 }

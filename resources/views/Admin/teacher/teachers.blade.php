@@ -35,7 +35,7 @@
                                         <tr>
                                             <td>  {{ ($teacher->name) }} </td>
                                             <td>  {{ ($teacher->description) }}   </td>
-                                            <td>  {{ ($teacher->Course) }}   </td>
+                                            <td>  {{ ($teacher->course_id) }}   </td>
 
                                             <td> <img width="150px" src="{{ asset($teacher->image) }} "></td>
 
