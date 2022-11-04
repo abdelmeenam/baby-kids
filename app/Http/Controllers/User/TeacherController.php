@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Course;
+use App\Models\Department;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 
@@ -14,14 +16,19 @@ class TeacherController extends Controller
         //$teacher = Teacher::with('course')->first();
         //dd($teacher->course->name);
         //dd($teacher);
-
-        $courses = Course::with('teacher:id,name,course_id')->select(['id' , 'name' , 'price']) ->first();
-        dd($courses);
+        //$courses = Course::with('teacher:id,name,course_id')->select(['id' , 'name' , 'price']) ->first();
+        //dd($courses);
         //------------many to many-------
         //$course  = Course::with('allTeachers')->first();
         //dd($course->allTeachers);
 //        foreach ($course->allTeachers as $teacher){
 //            dump ($teacher->name);
 //        }
+        //---------------Nested------ Departments -> Categories -> Items
+        $departments = Department::with('Categories')->get();
+        dd($departments);
+        //$categories = Category::with('Items')->get();
+        //dd($categories);
+
     }
 }
