@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Slider\DeleteSlider;
 use App\Http\Requests\Slider\SliderRequest;
-use App\Http\Requests\Slider\UpdateSliderRequest;
 use App\Http\Traits\ImagesTrait;
 use App\Models\Slider;
 use RealRashid\SweetAlert\Facades\Alert;

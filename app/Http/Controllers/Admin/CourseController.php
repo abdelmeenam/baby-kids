@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Activity\CreateActivityRequest;
-use App\Http\Requests\Activity\UpdateActivityRequest;
 use App\Http\Requests\Course\CreateCourseRequest;
 use App\Http\Requests\Course\DeleteCourseRequest;
 use App\Http\Requests\Course\UpdateCourseRequest;
