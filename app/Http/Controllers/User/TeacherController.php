@@ -19,6 +19,7 @@ class TeacherController extends Controller
         //dd($teacher);
         //$courses = Course::with('teacher:id,name,course_id')->select(['id' , 'name' , 'price']) ->first();
         //dd($courses);
+
         //------------many to many-------
         //$course  = Course::with('allTeachers')->first();
         //dd($course->allTeachers);

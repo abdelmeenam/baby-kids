@@ -17,8 +17,10 @@ class TeacherController extends Controller
 
     public function index()
     {
-        $teachers = Teacher::get();
-        // dd($teachers );
+        $teachers = Teacher::with('course')->get();
+
+      //  dd($teachers );
+
         return view('Admin.teacher.teachers', compact('teachers'));
     }
 
