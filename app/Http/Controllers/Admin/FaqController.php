@@ -65,14 +65,6 @@ class FaqController extends Controller
         return view('Admin.faq.edit', compact('faq'));
     }
 
-    /**
-     * @param UpdateFaqRequest $request
-     * @return void
-     * 1-get faq data
-     * 2-update
-     * 3-alert
-     * 4-return
-     */
     public function update(UpdateFaqRequest $request)
     {
         $faq = Faq::find($request->faq_id);
