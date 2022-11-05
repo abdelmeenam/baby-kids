@@ -49,6 +49,8 @@
 
                                 <input type="hidden" name="course_id" value="{{$course->id}}">
                                 <button type="submit" class="btn btn-primary">Update</button>
+                                <a href="{{route('admin.course.all')}}" class="btn btn-primary">View All Courses</a>
+
                             </form>
 
                         </div>

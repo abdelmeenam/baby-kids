@@ -32,6 +32,7 @@
                                         </div>
 
                                         <button type="submit" class="btn btn-primary">Add</button>
+                                        <a href="{{route('admin.slider.all')}}" class="btn btn-primary">View All Sliders</a>
 
                                     </form>
 

@@ -16,7 +16,6 @@ class Course extends Model
             'name' => 'required|min:5',
             'price' => 'required|min:2'  ,
             'description' => 'required|min:5'  ,
-            'image' => 'required'
         ];
     }
 

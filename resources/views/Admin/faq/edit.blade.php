@@ -43,6 +43,8 @@
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Update</button>
+                                <a href="{{route('admin.faq.all')}}" class="btn btn-primary">View All Faqs</a>
+
 
                             </form>
 

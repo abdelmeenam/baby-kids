@@ -11,7 +11,8 @@ use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
-    public function teacher(){
+    public function teacher()
+    {
         //-----------One to one----------
         //$teacher = Teacher::with('course')->first();
         //dd($teacher->course->name);
@@ -28,7 +29,7 @@ class TeacherController extends Controller
         $departments = Department::with('Categories')->get();
         dd($departments);
         //$categories = Category::with('Items')->get();
-        //dd($categories);
+        //dd($categories);l
 
     }
 }

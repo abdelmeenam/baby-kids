@@ -44,6 +44,8 @@
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Add</button>
+                                <a href="{{route('admin.activity.all')}}" class="btn btn-primary">View All Activities</a>
+
                             </form>
 
 

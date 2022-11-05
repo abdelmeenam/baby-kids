@@ -24,6 +24,8 @@ class CreateCourseRequest extends FormRequest
      */
     public function rules()
     {
-        return Course::rules();
+
+        return array_merge(Course::rules(), ['image' => 'required']);
+
     }
 }

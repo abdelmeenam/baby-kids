@@ -47,6 +47,8 @@
 
                                 <input type="hidden" name="teacher_id" value="{{$teacher->id}}">
                                 <button type="submit" class="btn btn-primary">Update</button>
+                                <a href="{{route('admin.teacher.all')}}" class="btn btn-primary">View All Teachers</a>
+
                             </form>
 
                         </div>

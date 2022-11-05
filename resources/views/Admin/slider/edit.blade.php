@@ -36,6 +36,8 @@
                                 <input type="hidden" name="slider_id" value="{{$slider->id}}">
 
                                 <button type="submit" class="btn btn-primary">Update</button>
+                                <a href="{{route('admin.slider.all')}}" class="btn btn-primary">View All Sliders</a>
+
                             </form>
 
                         </div>

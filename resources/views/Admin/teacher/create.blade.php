@@ -48,6 +48,8 @@
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Add Course</button>
+                                <a href="{{route('admin.teacher.all')}}" class="btn btn-primary">View All Teachers</a>
+
                             </form>
 
                         </div>

@@ -14,6 +14,7 @@
                             <div class="row">
                                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                     <h4>Create New FAQ</h4>
+
                                 </div>
                             </div>
                         </div>
@@ -39,6 +40,8 @@
                                     <textarea class="form-control" name="answer" aria-label="With textarea"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Add</button>
+                                <a href="{{route('admin.faq.all')}}" class="btn btn-primary">View All Faqs</a>
+
                             </form>
 
                         </div>
