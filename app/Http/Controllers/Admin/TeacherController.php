@@ -18,9 +18,6 @@ class TeacherController extends Controller
     public function index()
     {
         $teachers = Teacher::with('course')->get();
-
-      //  dd($teachers );
-
         return view('Admin.teacher.teachers', compact('teachers'));
     }
 
@@ -38,8 +35,6 @@ class TeacherController extends Controller
         $new_icon_name = time() . '-Teacher.png';
 
         $this->uploadImage($image, $new_icon_name, 'teachers');
-
-
         Teacher::create([
             'name' => $name,
             'description' => $description,
@@ -75,8 +70,6 @@ class TeacherController extends Controller
         $name = $req->name;
         $description = $req->description;
         $course_id = $req->course_id;
-
-        //$imageName= explode('/' , $oldFile ) ;   //getRowOriginal('image')
 
         $teacher->update([
             'name' => $name,
