@@ -8,8 +8,6 @@ use App\Http\Requests\Activity\DeleteActivityRequest;
 use App\Http\Requests\Activity\UpdateActivityRequest;
 use App\Http\Traits\ImagesTrait;
 use App\Models\Activity;
-use App\Models\Slider;
-use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ActivityController extends Controller
