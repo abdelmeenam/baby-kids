@@ -9,10 +9,8 @@ use App\Http\Controllers\Admin\FaqController;
 Route::get('/teacher', [\App\Http\Controllers\User\TeacherController::class, 'teacher']);
 Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'Home']);
 
-
 Route::get('/admin/login', [\App\Http\Controllers\Admin\AuthController::class, 'loginPage'])->name('admin.login');
 Route::post('/admin/login', [\App\Http\Controllers\Admin\AuthController::class, 'login'])->name('admin.postLogin');
-
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\AdminHomeController::class, 'index'])->name('index');
@@ -66,7 +64,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         Route::delete('/delete', [\App\Http\Controllers\Admin\AdminSliderController::class, 'delete'])->name('delete');
         Route::get('/edit/{slider_id}', [\App\Http\Controllers\Admin\AdminSliderController::class, 'edit'])->name('edit');
         Route::put('/update', [\App\Http\Controllers\Admin\AdminSliderController::class, 'update'])->name('update');
-
     });
 
 

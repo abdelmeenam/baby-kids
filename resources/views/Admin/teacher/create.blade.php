@@ -8,7 +8,6 @@
             <div class="row layout-top-spacing">
 
 
-
                 <div id="basic" class="col-lg-12 col-sm-12 col-12 layout-spacing">
                     <div class="statbox widget box box-shadow">
                         <div class="widget-header">
@@ -29,16 +28,24 @@
                                 @csrf
 
                                 <div class="input-group mb-4">
-                                    <input type="text" class="form-control"  name="name" placeholder="Teacher name" aria-label="Course name">
+                                    <input type="text" class="form-control" name="name" placeholder="Teacher name"
+                                           aria-label="Course name">
                                 </div>
 
                                 <div class="input-group mb-4">
-                                    <input type="text" class="form-control"  name="description" placeholder="description" aria-label="description">
+                                    <input type="text" class="form-control" name="description" placeholder="description"
+                                           aria-label="description">
                                 </div>
 
-                                <div class="input-group mb-4">
-                                    <input type="number" class="form-control"  name="course_id" placeholder="course" aria-label="course">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Example select</label>
+                                    <select class="form-control" id="exampleFormControlSelect1" name="course_id">
+                                        @foreach($courses as $course)
+                                        <option>{{ $course->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
+
 
                                 <div class="input-group mb-4">
                                     <div class="input-group-prepend">

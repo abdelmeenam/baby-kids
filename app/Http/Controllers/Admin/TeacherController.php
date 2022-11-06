@@ -7,6 +7,7 @@ use App\Http\Requests\Teacher\CreateTeacherRequest;
 use App\Http\Requests\Teacher\DeleteTeacherRequest;
 use App\Http\Requests\Teacher\UpdateTeacherRequest;
 use App\Http\Traits\ImagesTrait;
+use App\Models\Course;
 use App\Models\Teacher;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -23,7 +24,8 @@ class TeacherController extends Controller
 
     public function create()
     {
-        return view('Admin.teacher.create');
+        $courses = Course::get();
+        return view('Admin.teacher.create' , compact('courses'));
     }
 
     public function store(CreateTeacherRequest $req)
