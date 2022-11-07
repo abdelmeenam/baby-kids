@@ -32,7 +32,12 @@ class TeacherController extends Controller
     {
         $name = $req->name;
         $description = $req->description;
-        $course_id = $req->course_id;
+        //$course_id = $req->course_id;
+
+        //$course_id = Course::find()
+
+
+
         $image = $req->image;
         $new_icon_name = time() . '-Teacher.png';
 
