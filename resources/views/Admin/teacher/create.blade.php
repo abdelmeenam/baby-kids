@@ -41,11 +41,10 @@
                                     <label for="exampleFormControlSelect1">Example select</label>
                                     <select class="form-control" id="exampleFormControlSelect1" name="course_id">
                                         @foreach($courses as $course)
-                                        <option>{{ $course->name }}</option>
+                                        <option  value="{{$course->id}}" >{{ $course->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
-
 
                                 <div class="input-group mb-4">
                                     <div class="input-group-prepend">
@@ -54,7 +53,7 @@
                                     <input type="file" class="form-control" name="image" aria-label="With textarea">
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Add Course</button>
+                                <button type="submit" class="btn btn-primary">Add Teacher</button>
                                 <a href="{{route('admin.teacher.all')}}" class="btn btn-primary">View All Teachers</a>
 
                             </form>
