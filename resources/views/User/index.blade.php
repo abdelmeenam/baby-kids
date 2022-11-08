@@ -1,4 +1,4 @@
-@include('assets.navbar')
+@include('User.assets.navbar')
 
 <div class="nicdark_section nicdark_navigation fade-down">
 
@@ -265,13 +265,13 @@
 
             <ul>
                 @foreach( $sliders as $slider)
-                <!--start second-->
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on"
-                    data-title="LESSON">
-                    <img src="{{asset($slider->image)}}" alt="" data-lazyload="{{asset($slider->image)}}"
-                         data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">
-                </li>
-                <!--end second-->
+                    <!--start second-->
+                    <li data-transition="fade" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on"
+                        data-title="LESSON">
+                        <img src="{{asset($slider->image)}}" alt="" data-lazyload="{{asset($slider->image)}}"
+                             data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">
+                    </li>
+                    <!--end second-->
                 @endforeach
 
             </ul>
@@ -292,7 +292,7 @@
                     class="nicdark_textevidence nicdark_width_percentage25 nicdark_bg_blue nicdark_shadow nicdark_radius_left">
                     <div class="nicdark_textevidence">
                         <div class="nicdark_margin30">
-                            <h2 class="white subtitle"><a class="white" href="courses.html">COURSES</a></h2>
+                            <h2 class="white subtitle"><a class="white" href="{{ route('user.courses') }}">COURSES</a></h2>
                         </div>
                         <i class="nicdark_zoom icon-pencil-2 nicdark_iconbg left extrabig blue nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
                     </div>
@@ -317,7 +317,7 @@
                     class="nicdark_textevidence nicdark_width_percentage25 nicdark_bg_green nicdark_shadow nicdark_radius_right">
                     <div class="nicdark_textevidence">
                         <div class="nicdark_margin30">
-                            <h2 class="white subtitle"><a class="white" href="teachers.html">TEACHERS</a></h2>
+                            <h2 class="white subtitle"><a class="white" href="{{ route('user.teachers') }}">TEACHERS</a></h2>
                         </div>
                         <i class="nicdark_zoom icon-graduation-cap-1 nicdark_iconbg left extrabig green nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
                     </div>
@@ -486,7 +486,7 @@
             <div class="nicdark_space50"></div>
 
             <div class="grid grid_6 nicdark_aligncenter_iphoneland nicdark_aligncenter_iphonepotr">
-                <a href="courses.html"
+                <a href="{{ route('user.courses') }}"
                    class="nicdark_disable_floatright_iphoneland nicdark_disable_floatright_iphonepotr nicdark_btn nicdark_bg_blue medium right nicdark_shadow nicdark_radius white nicdark_press"><i
                         class="icon-th-outline"></i>&nbsp;&nbsp;&nbsp;ALL COURSES</a>
             </div>
@@ -1268,4 +1268,4 @@
 </section>
 <!--end section--><!--end-->
 
-@include('assets.footer')
+@include('User.assets.footer')

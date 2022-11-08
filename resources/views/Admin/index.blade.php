@@ -10,29 +10,29 @@
                                 <h6 class="">Statistics</h6>
                             </div>
 
-                            <div class="w-chart">
-
+                            <div class="w-chart ">
                                 <div class="w-chart-section">
                                     <div class="w-detail">
-                                        <p class="w-title">Total Visits</p>
-                                        <p class="w-stats">423,964</p>
-                                    </div>
-                                    <div class="w-chart-render-one">
-                                        <div id="total-users"></div>
+                                        <p class="w-title"> Teachers</p>
+                                        <p class="w-stats">{{$teachers}}</p>
                                     </div>
                                 </div>
 
                                 <div class="w-chart-section">
                                     <div class="w-detail">
-                                        <p class="w-title">Total Visits</p>
-                                        <p class="w-stats">423,964</p>
-                                    </div>
-                                    <div class="w-chart-render-one">
-                                        <div id="total-users"></div>
+                                        <p class="w-title">Courses</p>
+                                        <p class="w-stats">{{$courses}}</p>
                                     </div>
                                 </div>
 
+                                <div class="w-chart-section">
+                                    <div class="w-detail">
+                                        <p class="w-title">Activities</p>
+                                        <p class="w-stats">{{$activities }}</p>
+                                    </div>
+                                </div>
                             </div>
+
                     </div>
             </div>
         </div>

@@ -16,10 +16,22 @@ class HomeController extends Controller
         $sliders = Slider::get();
         $teachers = Teacher::get();
         $activities = Activity::get();
-        $courses = Course::get();
         $faqs = Faq::get();
-        return view('index', compact(['sliders']));
+        return view('User.index', compact(['sliders']));
+    }
 
+    public function courses(){
+        $courses = Course::get();
+        return view('User.courses', compact(['courses']));
 
     }
+    public function teachers(){
+        $teachers = Teacher::get();
+
+        return view('User.teachers', compact(['teachers']));
+
+    }
+
+
+
 }

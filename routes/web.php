@@ -8,6 +8,9 @@ use App\Http\Controllers\Admin\FaqController;
 
 Route::get('/teacher', [\App\Http\Controllers\User\TeacherController::class, 'teacher']);
 Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'Home']);
+Route::get('/courses', [\App\Http\Controllers\User\HomeController::class, 'courses'])->name('user.courses');
+Route::get('/teachers', [\App\Http\Controllers\User\HomeController::class, 'teachers'])->name('user.teachers');
+
 
 Route::get('/admin/login', [\App\Http\Controllers\Admin\AuthController::class, 'loginPage'])->name('admin.login');
 Route::post('/admin/login', [\App\Http\Controllers\Admin\AuthController::class, 'login'])->name('admin.postLogin');
