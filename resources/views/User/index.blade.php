@@ -349,124 +349,27 @@
             <div class="nicdark_space10"></div>
         </div>
 
-
+        @foreach($activities as $activity)
         <div class="grid grid_4 nicdark_relative">
 
-            <div class="nicdark_btn_iconbg nicdark_bg_yellow nicdark_absolute extrabig nicdark_shadow nicdark_radius">
+            <div class="nicdark_btn_iconbg nicdark_bg_yellow nicdark_absolute extrabig">
                 <div>
-                    <i class="icon-leaf-1 nicdark_iconbg left big white"></i>
+                    <img src="{{$activity->icon }}">
                 </div>
             </div>
 
             <div class="nicdark_activity nicdark_marginleft100">
-                <h4>CUSTOM FOOD</h4>
+                <h4>{{$activity->title}}</h4>
                 <div class="nicdark_space20"></div>
-                <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed
-                    ultricies diam.</p>
+                <p>{{$activity->slug}}</p>
                 <div class="nicdark_space20"></div>
                 <a href="#" class="nicdark_btn grey"><i class="icon-right-open-outline"></i> More</a>
                 <div class="nicdark_space20"></div>
             </div>
 
         </div>
+        @endforeach
 
-        <div class="grid grid_4 nicdark_relative">
-
-            <div class="nicdark_btn_iconbg nicdark_bg_orange nicdark_absolute extrabig nicdark_shadow nicdark_radius">
-                <div>
-                    <i class="icon-stopwatch nicdark_iconbg left big white"></i>
-                </div>
-            </div>
-
-            <div class="nicdark_activity nicdark_marginleft100">
-                <h4>MANY SPORTS</h4>
-                <div class="nicdark_space20"></div>
-                <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed
-                    ultricies diam.</p>
-                <div class="nicdark_space20"></div>
-                <a href="#" class="nicdark_btn grey"><i class="icon-right-open-outline"></i> More</a>
-                <div class="nicdark_space20"></div>
-            </div>
-
-        </div>
-
-        <div class="grid grid_4 nicdark_relative">
-
-            <div class="nicdark_btn_iconbg nicdark_bg_green nicdark_absolute extrabig nicdark_shadow nicdark_radius">
-                <div>
-                    <i class="icon-cab nicdark_iconbg left big white"></i>
-                </div>
-            </div>
-
-            <div class="nicdark_activity nicdark_marginleft100">
-                <h4>BUS SERVICE</h4>
-                <div class="nicdark_space20"></div>
-                <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed
-                    ultricies diam.</p>
-                <div class="nicdark_space20"></div>
-                <a href="#" class="nicdark_btn grey"><i class="icon-right-open-outline"></i> More</a>
-                <div class="nicdark_space20"></div>
-            </div>
-
-        </div>
-
-
-        <div class="grid grid_4 nicdark_relative">
-
-            <div class="nicdark_btn_iconbg nicdark_bg_blue nicdark_absolute extrabig nicdark_shadow nicdark_radius">
-                <div>
-                    <i class="icon-headphones-1 nicdark_iconbg left big white"></i>
-                </div>
-            </div>
-
-            <div class="nicdark_activity nicdark_marginleft100">
-                <h4>MUSIC LESSON</h4>
-                <div class="nicdark_space20"></div>
-                <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed
-                    ultricies diam.</p>
-                <div class="nicdark_space20"></div>
-                <a href="#" class="nicdark_btn grey"><i class="icon-right-open-outline"></i> More</a>
-            </div>
-
-        </div>
-
-        <div class="grid grid_4 nicdark_relative">
-
-            <div class="nicdark_btn_iconbg nicdark_bg_violet nicdark_absolute extrabig nicdark_shadow nicdark_radius">
-                <div>
-                    <i class="icon-map nicdark_iconbg left big white"></i>
-                </div>
-            </div>
-
-            <div class="nicdark_activity nicdark_marginleft100">
-                <h4>EXCURSIONS</h4>
-                <div class="nicdark_space20"></div>
-                <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed
-                    ultricies diam.</p>
-                <div class="nicdark_space20"></div>
-                <a href="#" class="nicdark_btn grey"><i class="icon-right-open-outline"></i> More</a>
-            </div>
-
-        </div>
-
-        <div class="grid grid_4 nicdark_relative">
-
-            <div class="nicdark_btn_iconbg nicdark_bg_red nicdark_absolute extrabig nicdark_shadow nicdark_radius">
-                <div>
-                    <i class="icon-globe-2 nicdark_iconbg left big white"></i>
-                </div>
-            </div>
-
-            <div class="nicdark_activity nicdark_marginleft100">
-                <h4>LANGUAGES</h4>
-                <div class="nicdark_space20"></div>
-                <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed
-                    ultricies diam.</p>
-                <div class="nicdark_space20"></div>
-                <a href="#" class="nicdark_btn grey"><i class="icon-right-open-outline"></i> More</a>
-            </div>
-
-        </div>
 
         <div class="nicdark_space50"></div>
 
